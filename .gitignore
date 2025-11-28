@@ -1,0 +1,32 @@
+# === Global ignores for this repo ===
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+*~
+*.swp
+*.swo
+hs_err_pid*
+replay_pid*
+
+# IDE junk
+.idea/
+*.iml
+.vscode/
+
+# === food_order (NetBeans + Ant project) ===
+
+# Ant / NetBeans build outputs
+food_order/build/
+food_order/dist/
+food_order/nbbuild/
+food_order/nbdist/
+
+# NetBeans generated build props
+food_order/build/built-jar.properties
+
+# NetBeans private configuration (user-specific)
+food_order/nbproject/private/
+food_order/nbproject/private/*
+food_order/nbproject/*-private.xml
