@@ -5,9 +5,14 @@ pipeline {
 
         stage("BuildCode"){
             steps {
-                sh "ant clean"
-                sh "ant jar"
+
+                sh """
+                    cd food_order
+                    ant clean
+                    ant jar
+                
+                """
+              
             }
-        }
     }
 }
