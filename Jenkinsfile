@@ -23,6 +23,18 @@ pipeline {
             }
         }
 
+        stage("Sonar-Scanning"){
+            steps {
+                echo "Scanning code..."
+            }
+        }
+
+        stage("QG-Check"){
+            steps {
+                echo "Checking QG..."
+            }
+        }
+
 
 
     }
