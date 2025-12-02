@@ -30,6 +30,7 @@ pipeline {
                         sh """
                             cd food_order
                             sonar-scanner \
+                                        -Dsonar.projectKey=Food-Order-System \
                                         -Dsonar.projectName=Food-Order-System \
                                         -Dsonar.sources=. \
                                         -Dsonar.sourceEncoding=UTF-8
