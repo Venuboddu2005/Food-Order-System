@@ -1,9 +1,5 @@
 pipeline {
     agent any 
-    // tools {
-    //     ant 'ant-1.10.15'   // <--- uses the Ant tool named ant-1.10.15
-    // }
-
     stages{
 
         stage("BuildCode"){
@@ -28,7 +24,18 @@ pipeline {
 
         stage("Sonar-Scanning"){
             steps {
-                echo "Scanning code..."
+               
+               script {
+                    withSonarQubeEnv( installationName: 'sonar-server-01', credentialsId: 'sonar-jenkins-creds') {
+                        sh """
+                            cd food_order
+                            sonar-scanner \
+                                        -Dsonar.projectName=Food-Order-System \
+                                        -Dsonar.sources=. \
+                                        -Dsonar.sourceEncoding=UTF-8
+                        """
+                    }
+               }
             }
         }
 
