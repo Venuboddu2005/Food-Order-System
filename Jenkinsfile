@@ -40,13 +40,18 @@ pipeline {
             }
         }
 
-        stage("QG-Check"){
+        stage("Sonar Quality Gate") {
             steps {
-                echo "Checking QG..."
+                script {
+                    timeout(time: 3, unit: 'MINUTES') {
+                        def qg = waitForQualityGate()
+                        if (qg.status != 'OK') {
+                            error "Pipeline failed due to quality gate: ${qg.status}"
+                        }
+                    }
+                }
             }
         }
-
-
 
     }
 }
