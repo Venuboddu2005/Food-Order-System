@@ -53,5 +53,31 @@ pipeline {
             }
         }
 
+        stage("Upload-Artifacts-Nexus"){
+            steps {
+
+                script {
+
+                    nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: 'nexus:8081',
+                        groupId: 'com.example',
+                        version: '1.0.0',
+                        repository: 'maven-public',
+                        credentialsId: 'nexus-creds',
+                        artifacts: [
+                            [artifactId: "Food-Order-System",
+                            classifier: '',
+                            file: 'my-service-' + version + '.jar',
+                            type: 'jar']
+                        ]
+                    )
+
+                }
+
+            }
+        }
+
     }
 }
