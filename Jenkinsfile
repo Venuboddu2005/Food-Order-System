@@ -63,7 +63,7 @@ pipeline {
                         groupId: 'com.example',
                         artifactId: 'anagrams',       // REQUIRED
                         version: '1.0.0',
-                        repository: 'maven-central',
+                        repository: 'maven-snapshots',
                         credentialsId: 'nexus-creds',
                         artifacts: [
                             [
