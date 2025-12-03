@@ -54,6 +54,9 @@ pipeline {
         stage("Upload-Artifacts-Nexus"){
             steps {
 
+                 def snapshotVersion = "1.0.0-${env.BUILD_NUMBER}-SNAPSHOT"
+
+                echo "Uploading version: ${snapshotVersion}"
                 script {
 
                     nexusArtifactUploader(
@@ -61,7 +64,7 @@ pipeline {
                         protocol: 'http',
                         nexusUrl: 'nexus:8081',
                         groupId: 'com.example',
-                        version: '1.0.0-SNAPSHOT',
+                        version: snapshotVersion,
                         repository: 'maven-snapshots',
                         credentialsId: 'nexus-creds',
                         artifacts: [
