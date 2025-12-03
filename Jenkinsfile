@@ -83,5 +83,30 @@ pipeline {
             }
         }
 
+        stage("Deploy-Dev"){
+            steps {
+
+                echo "Deploying....Dev Servers..."
+            }
+        }
+
+        stage("Deploy-UAT"){
+            steps {
+
+                echo "Deploying....UAT Servers..."
+            }
+        }
+
+        stage("Deploy-PROD"){
+            steps {
+
+                echo "Deploying....PROD Servers..."
+            }
+        }
+
+
+
+
+
     }
 }
