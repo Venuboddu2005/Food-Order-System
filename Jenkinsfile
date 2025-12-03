@@ -61,7 +61,7 @@ pipeline {
                         protocol: 'http',
                         nexusUrl: 'nexus:8081',
                         groupId: 'com.example',
-                        version: '1.0.0',
+                        version: '1.0.0-SNAPSHOT',
                         repository: 'maven-snapshots',
                         credentialsId: 'nexus-creds',
                         artifacts: [
