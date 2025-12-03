@@ -61,12 +61,12 @@ pipeline {
                         protocol: 'http',
                         nexusUrl: 'nexus:8081',
                         groupId: 'com.example',
-                        artifactId: 'anagrams',       // REQUIRED
                         version: '1.0.0',
                         repository: 'maven-snapshots',
                         credentialsId: 'nexus-creds',
                         artifacts: [
                             [
+                                artifactId: 'anagrams',
                                 file: "/var/jenkins_home/workspace/Food-Order/Food-Order-System/food_order/dist/anagrams.jar",
                                 type: "jar",
                                 classifier: ""
