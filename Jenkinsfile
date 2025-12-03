@@ -54,10 +54,11 @@ pipeline {
         stage("Upload-Artifacts-Nexus"){
             steps {
 
-                 def snapshotVersion = "1.0.0-${env.BUILD_NUMBER}-SNAPSHOT"
-
-                echo "Uploading version: ${snapshotVersion}"
+             
                 script {
+                    def snapshotVersion = "1.0.0-${env.BUILD_NUMBER}-SNAPSHOT"
+
+                    echo "Uploading version: ${snapshotVersion}"
 
                     nexusArtifactUploader(
                         nexusVersion: 'nexus3',
