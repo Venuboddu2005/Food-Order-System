@@ -6,7 +6,6 @@ pipeline {
             steps {
                 sh """
                     cd food_order
-                    ant clean
                     ant jar
                 """
             }
@@ -16,7 +15,6 @@ pipeline {
             steps {
                 sh """
                     cd food_order
-                    ant clean
                     ant test
                 """
             }
@@ -68,7 +66,7 @@ pipeline {
                         credentialsId: 'nexus-creds',
                         artifacts: [
                             [
-                                file: "./Food-Order-System/food_order/dist/anagrams.jar",
+                                file: "$WORKSPACE/Food-Order-System/food_order/dist/anagrams.jar",
                                 type: "jar",
                                 classifier: ""
                             ]
