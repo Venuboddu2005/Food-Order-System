@@ -66,7 +66,7 @@ pipeline {
                         credentialsId: 'nexus-creds',
                         artifacts: [
                             [
-                                file: "$WORKSPACE/Food-Order/Food-Order-System/food_order/dist/anagrams.jar",
+                                file: "${WORKSPACE}/Food-Order/Food-Order-System/food_order/dist/anagrams.jar",
                                 type: "jar",
                                 classifier: ""
                             ]
