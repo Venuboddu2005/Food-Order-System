@@ -67,10 +67,11 @@ pipeline {
                         repository: 'maven-public',
                         credentialsId: 'nexus-creds',
                         artifacts: [
-                            [artifactId: "Food-Order-System",
-                            classifier: '',
-                            file: 'my-service-' + version + '.jar',
-                            type: 'jar']
+                            [
+                                file: "Food-Order-System/food_order/dist/anagrams.jar",
+                                type: "jar",
+                                classifier: ""
+                            ]
                         ]
                     )
 
